@@ -3,6 +3,18 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthenticationController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\CompanyProfileController;
+use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Admin\ManagementController;
+use App\Http\Controllers\Admin\MessageController;
+use App\Http\Controllers\Admin\PartnerController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\QueryController;
+use App\Http\Controllers\Admin\RegistrationController;
+use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\SubcategoryController;
+
 
 /*
 |--------------------------------------------------------------------------

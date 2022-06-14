@@ -14,7 +14,7 @@
                         <div class="row">
                             <div class="col-md-12 mb-2">
                                 <label for="title"> Image Name <span class="text-danger">*</span> </label>
-                                <input type="text" name="title" class="form-control shadow-none @error('title') is-invalid @enderror" id="title" placeholder="Enter Image Name" value="{{ $gallery->title }}">
+                                <input type="text" name="title" class="form-control form-control-sm shadow-none @error('title') is-invalid @enderror" id="title" placeholder="Enter Image Name" value="{{ $gallery->title }}">
                                 @error('title')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -23,18 +23,16 @@
                             </div>
                             <div class="col-md-12 mb-2">
                                 <label for="image">Image</label>
-                                <input class="form-control" id="image" type="file" name="image" onchange="readURL(this);">
+                                <input class="form-control form-control-sm" id="image" type="file" name="image" onchange="readURL(this);">
                                 <div class="form-group mt-2">
                                     <img class="form-controlo img-thumbnail" src="#" id="previewImage" style="width: 100px;height: 80px; background: #3f4a49;">
                                 </div>
                             </div>
                         </div>
                         <div class="clearfix border-top">
-                            <div class="float-md-left mt-2">
-                                <a href="{{ route('gallery') }}" class="btn btn-dark">Prev</a>
-                            </div>
                             <div class="float-md-right mt-2">
-                                <button type="submit" class="btn btn-info">Update</button>
+                                <button type="button" id="prev" class="btn btn-dark btn-sm">Prev</button>
+                                <button type="submit" class="btn btn-info btn-sm">Update</button>
                             </div>
                         </div>
                     </form>
@@ -65,5 +63,9 @@
     @else
     document.getElementById("previewImage").src="/uploads/no.png";
     @endif
+
+    document.getElementById("prev").onclick = function () {
+        location.href = "{{ route('gallery') }}";
+    };
 </script>
 @endpush

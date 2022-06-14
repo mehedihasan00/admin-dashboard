@@ -16,7 +16,7 @@
                         <div class="row">
                             <div class="col-md-6 mb-2">
                                 <label for="name">Company Name <span class="text-danger">*</span> </label>
-                                <input type="text" name="name" value="{{ $company->name }}" class="form-control shadow-none @error('name') is-invalid @enderror" id="name">
+                                <input type="text" name="name" value="{{ $company->name }}" class="form-control form-control-sm shadow-none @error('name') is-invalid @enderror" id="name">
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -25,7 +25,7 @@
                             </div>
                             <div class="col-md-6 mb-2">
                                 <label for="phone">Company Phone <span class="text-danger">*</span> </label>
-                                <input type="text" name="phone" value="{{ $company->phone }}" class="form-control shadow-none @error('phone') is-invalid @enderror" id="phone">
+                                <input type="text" name="phone" value="{{ $company->phone }}" class="form-control form-control-sm shadow-none @error('phone') is-invalid @enderror" id="phone">
                                 @error('phone')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -34,7 +34,7 @@
                             </div>
                             <div class="col-md-6 mb-2">
                                 <label for="email">E-Mail Address <span class="text-danger">*</span></label>
-                                <input type="email" name="email" value="{{ $company->email }}" class="form-control shadow-none @error('email') is-invalid @enderror" id="email">
+                                <input type="email" name="email" value="{{ $company->email }}" class="form-control form-control-sm shadow-none @error('email') is-invalid @enderror" id="email">
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -43,7 +43,7 @@
                             </div>
                             <div class="col-md-6 mb-2">
                                 <label for="address">Company Address <span class="text-danger">*</span></label>
-                                <input type="text" name="address" value="{{ $company->address }}" class="form-control shadow-none @error('address') is-invalid @enderror" id="address">
+                                <input type="text" name="address" value="{{ $company->address }}" class="form-control form-control-sm shadow-none @error('address') is-invalid @enderror" id="address">
                                 @error('address')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -52,7 +52,7 @@
                             </div>
                             <div class="col-md-6 mb-2">
                                 <label for="facebook">Company Facebook</label>
-                                <input type="url" name="facebook" value="{{ $company->facebook }}" class="form-control shadow-none @error('facebook') is-invalid @enderror" id="facebook">
+                                <input type="url" name="facebook" value="{{ $company->facebook }}" class="form-control form-control-sm shadow-none @error('facebook') is-invalid @enderror" id="facebook">
                                 @error('facebook')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -61,7 +61,7 @@
                             </div>
                             <div class="col-md-6 mb-2">
                                 <label for="twitter">Company Twitter</label>
-                                <input type="url" name="twitter" value="{{ $company->twitter }}" class="form-control shadow-none @error('twitter') is-invalid @enderror" id="twitter">
+                                <input type="url" name="twitter" value="{{ $company->twitter }}" class="form-control form-control-sm shadow-none @error('twitter') is-invalid @enderror" id="twitter">
                                 @error('twitter')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -70,26 +70,26 @@
                             </div>
                             <div class="col-md-6 mb-2">
                                 <label for="linkedin">Company Linkedin</label>
-                                <input type="url" name="linkedin" value="{{ $company->linkedin }}" class="form-control shadow-none @error('linkedin') is-invalid @enderror" id="linkedin">
+                                <input type="url" name="linkedin" value="{{ $company->linkedin }}" class="form-control form-control-sm shadow-none @error('linkedin') is-invalid @enderror" id="linkedin">
                                 @error('linkedin')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                                 <label for="logo" class="mt-2">Company Logo</label>
-                                <input class="form-control" id="logo" type="file" name="logo" onchange="readURL(this);">
+                                <input class="form-control form-control-sm" id="logo" type="file" name="logo" onchange="readURL(this);">
                                 <div class="form-group my-2">
-                                    <img class="form-controlo img-thumbnail" src="#" id="previewImage" style="width: 150px;height: 70px;">
+                                    <img class="form-controlo img-thumbnail" src="#" id="previewImage" style="width: 160px;height: 130px;">
                                 </div>
                                 <label for="about_image">About Image</label>
-                                <input class="form-control" id="about_image" type="file" name="about_image" onchange="readAboutURL(this);">
+                                <input class="form-control form-control-sm" id="about_image" type="file" name="about_image" onchange="readAboutURL(this);">
                                 <div class="form-group mt-2">
-                                    <img class="form-controlo img-thumbnail" src="#" id="previewAboutImage" style="width: 150px;height: 120px;">
+                                    <img class="form-controlo img-thumbnail" src="#" id="previewAboutImage" style="width: 160px;height: 130px;">
                                 </div>
                             </div>
                             <div class="col-md-6 mb-2">
                                 <label for="instagram">Company Instagram</label>
-                                <input type="url" name="instagram" value="{{ $company->instagram }}" class="form-control shadow-none @error('instagram') is-invalid @enderror" id="instagram">
+                                <input type="url" name="instagram" value="{{ $company->instagram }}" class="form-control form-control-sm shadow-none @error('instagram') is-invalid @enderror" id="instagram">
                                 @error('instagram')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -97,13 +97,13 @@
                                 @enderror
 
                                 <label for="bg_image">Background Image</label>
-                                <input class="form-control" id="bg_image" type="file" name="bg_image" onchange="readBgURL(this);">
+                                <input class="form-control form-control-sm" id="bg_image" type="file" name="bg_image" onchange="readBgURL(this);">
                                 <div class="form-group mt-2">
-                                    <img class="form-controlo img-thumbnail" src="#" id="previewBgImage" style="width: 150px;height: 120px;">
+                                    <img class="form-controlo img-thumbnail" src="#" id="previewBgImage" style="width: 160px;height: 130px;">
                                 </div>
 
                                 <label for="about" class="mt-2">Company About</label>
-                                <textarea class="form-control" name="about" id="about_description" cols="4" rows="4">{{ $company->about }}</textarea>
+                                <textarea class="form-control form-control-sm" name="about" id="about_description" cols="4" rows="4">{{ $company->about }}</textarea>
                                 @error('about')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -114,8 +114,8 @@
                         <hr class="mt-0">
                         <div class="clearfix mt-1">
                             <div class="float-md-right">
-                                <button type="reset" class="btn btn-dark">Reset</button>
-                                <button type="submit" class="btn btn-info">Update</button>
+                                <button type="reset" class="btn btn-dark btn-sm">Reset</button>
+                                <button type="submit" class="btn btn-info btn-sm">Update</button>
                             </div>
                         </div>
                     </form>
@@ -130,7 +130,8 @@
 <script>
     $('#about_description').summernote({
         tabsize: 2,
-        height: 220
+        height: 160,
+        placeholder: 'Write about your company'
     });
 </script>
 <script>
@@ -141,8 +142,8 @@
             reader.onload = function (e) {
                 $('#previewImage')
                     .attr('src', e.target.result)
-                    .width(120)
-                    .height(70);
+                    .width(160)
+                    .height(130);
             };
 
             reader.readAsDataURL(input.files[0]);
@@ -157,8 +158,8 @@
             reader.onload = function (e) {
                 $('#previewAboutImage')
                     .attr('src', e.target.result)
-                    .width(150)
-                    .height(120);
+                    .width(160)
+                    .height(130);
             };
 
             reader.readAsDataURL(input.files[0]);
@@ -173,8 +174,8 @@
             reader.onload = function (e) {
                 $('#previewBgImage')
                     .attr('src', e.target.result)
-                    .width(150)
-                    .height(120);
+                    .width(160)
+                    .height(130);
             };
 
             reader.readAsDataURL(input.files[0]);

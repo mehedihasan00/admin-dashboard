@@ -14,14 +14,14 @@
                         <div class="row">
                             <div class="col-md-6 mb-2">
                                 <label for="title"> Image Name <span class="text-danger">*</span> </label>
-                                <input type="text" name="title" class="form-control shadow-none @error('title') is-invalid @enderror" id="title" placeholder="Enter Image Name">
+                                <input type="text" name="title" class="form-control form-control-sm shadow-none @error('title') is-invalid @enderror" id="title" placeholder="Enter Image Name">
                                 @error('title')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                                 <label for="image">Image</label>
-                                <input class="form-control" id="image" type="file" name="image" onchange="readURL(this);">
+                                <input class="form-control form-control-sm" id="image" type="file" name="image" onchange="readURL(this);">
                             </div>
                             <div class="col-md-4 offset-md-1 mt-3">
                                 <div class="form-group mt-2">
@@ -32,8 +32,8 @@
                         <hr class="my-2">
                         <div class="clearfix mt-1">
                             <div class="float-md-left">
-                                <button type="reset" class="btn btn-dark">Reset</button>
-                                <button type="submit" class="btn btn-info">Save</button>
+                                <button type="reset" class="btn btn-dark btn-sm">Reset</button>
+                                <button type="submit" class="btn btn-info btn-sm">Save</button>
                             </div>
                         </div>
                     </form>
@@ -63,10 +63,10 @@
                                 <tr>
                                     <td>{{ $key+1 }}</td>
                                     <td>{{ $user->title }}</td>                                    
-                                    <td><img class="border" style="height: 40px; width:50px;" src="{{ asset('uploads/gallery/'.$user->image) }}" alt=""></td>
+                                    <td><img class="border" style="height: 26px; width:35px;" src="{{ asset('uploads/gallery/'.$user->image) }}" alt=""></td>
                                     <td>
-                                        <a href="{{ url('gallery/edit/'. $user->id) }}" type="submit" class="d-inline btn btn-primary btn-sm b-btn mr-2"><i class="fas fa-user-edit"></i></button>
-                                        <a href="{{ url('gallery/delete/'.$user->id) }}" type="submit" class="d-inline btn btn-danger btn-sm b-btn" onclick="return confirmDel()"><i class="fas fa-trash"></i></button>
+                                        <a href="{{ url('gallery/edit/'. $user->id) }}" type="submit" class="btn btn-info btn-mod-info btn-sm mr-1"><i class="fas fa-user-edit"></i></button>
+                                        <a href="{{ url('gallery/delete/'.$user->id) }}" type="submit" class="btn btn-danger btn-mod-danger btn-sm" onclick="return confirmDel()"><i class="fas fa-trash"></i></button>
                                     </td>
                                 </tr>
                             @empty

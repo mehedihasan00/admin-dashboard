@@ -12,7 +12,7 @@ class GalleryController extends Controller
 {
     public function gallery() {
         $galleries = Gallery::latest()->get();
-        return view('pages.admin.gallery.gallery', compact('galleries'));
+        return view('pages.admin.gallery.index', compact('galleries'));
     }
     public function galleryInsert(Request $request) {
         $validatedData = $request->validate([
@@ -44,7 +44,7 @@ class GalleryController extends Controller
     }
     public function galleryEdit($id) {
         $gallery = Gallery::find($id);
-        return view('pages.admin.gallery.edit_gallery', compact('gallery'));
+        return view('pages.admin.gallery.edit', compact('gallery'));
     }
 
     public function galleryUpdate(Request $request, $id) {

@@ -41,7 +41,6 @@ class ManagementController extends Controller
         $image->move($upLocation, $imgName);
 
         try {
-            DB::beginTransaction();
             $management = new Management;
             $management->name = $request->name;
             $management->designation = $request->designation;
@@ -51,10 +50,8 @@ class ManagementController extends Controller
             $management->instagram = $request->instagram;
             $management->created_at = Carbon::now();
             $management->save();
-            DB::commit();
-            return redirect()->back()->with('success', 'photo Inserted!');
+            return redirect()->back()->with('success', 'Member Inserted!');
         } catch (\Exception $e) {
-            DB::rollback();           
 		    return ["error" => $e->getMessage()];
             // return Redirect()->back()->with('Failed', 'Photo insertion failed!');
         }
@@ -92,7 +89,6 @@ class ManagementController extends Controller
         ]);
 
         try {
-            DB::beginTransaction();
             $management = Management::findOrFail($id);
             $management->name = $request->name;
             $management->designation = $request->designation;
@@ -109,10 +105,8 @@ class ManagementController extends Controller
             $management->twitter = $request->twitter;
             $management->instagram = $request->instagram;
             $management->save();
-            DB::commit();
             return Redirect()->route('management.index')->with("success", "Update Successfull");
         } catch(\Exception $e) {
-            DB::rollback();         
 		    return ["error" => $e->getMessage()];
             // return redirect()->back()->with('error', 'Team insert failed!');
         }

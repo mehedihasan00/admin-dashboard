@@ -24,7 +24,7 @@
                             <div class="row">
                                 <div class="col-md-12 mb-2">
                                     <label for="name"> Subcategory Name <span class="text-danger">*</span> </label>
-                                    <input type="text" name="name" value="{{ @$subcategoryData->name }}" class="form-control" id="name" placeholder="Enter Category name">
+                                    <input type="text" name="name" value="{{ @$subcategoryData->name }}" class="form-control form-control-sm" id="name" placeholder="Enter Category name">
                                     @error('name') <span style="color: red">{{$message}}</span> @enderror
                                 </div>
                             </div>
@@ -32,7 +32,7 @@
                             <div class="row">
                                 <div class="col-md-12 mb-2">
                                     <label for="name"> Category <span class="text-danger">*</span> </label>
-                                    <select name="category_id" class="form-control">
+                                    <select name="category_id" class="form-control form-control-sm">
                                         <option value="">Select Category Option</option>
                                         @foreach ($category as $item)
                                             <option value="{{ $item->id }}" {{ $item->id == @$subcategoryData->category_id ? 'selected' : '' }} >{{ $item->name }}</option>
@@ -45,8 +45,8 @@
                             
                             <div class="clearfix border-top">
                                 <div class="float-md-right mt-2">
-                                    <button type="reset" class="btn btn-dark">Reset</button>
-                                    <button type="submit" class="btn btn-info">{{(@$subcategoryData)?'Update':'Create'}}</button>
+                                    <button type="reset" {{ (@$subcategoryData) ? 'id=prev' : '' }} class="btn btn-dark btn-sm">{{ (@$subcategoryData)? 'Prev' : 'Reset' }}</button>
+                                    <button type="submit" class="btn btn-info btn-sm">{{(@$subcategoryData)?'Update':'Create'}}</button>
                                 </div>
                             </div>
                         </form>
@@ -79,8 +79,8 @@
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->category->name }}</td>
                                         <td>
-                                            <a href="{{ route('admin.subcategory.edit', $item->id) }}" class="btn-sm btn btn-info"><i class="fas fa-user-edit"></i></a>
-                                            <a href="{{ route('admin.subcategory.delete', $item->id) }}" onclick="confirm('Are you sure to Delete?')" class="btn-sm btn btn-danger"><i class="fas fa-trash"></i></a>
+                                            <a href="{{ route('admin.subcategory.edit', $item->id) }}" class="btn btn-info btn-mod-info btn-sm"><i class="fas fa-edit"></i></a>
+                                            <a href="{{ route('admin.subcategory.delete', $item->id) }}" onclick="confirm('Are you sure to Delete?')" class="btn btn-danger btn-mod-danger btn-sm"><i class="fas fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -92,8 +92,14 @@
                 </div>
             </div>
         </div>
-    </div>
-    
-    
+    </div>    
 </main>
 @endsection
+@push('admin-js')
+<script>
+    document.getElementById("prev").onclick = function () {
+        location.href = "{{ route('admin.subcategories') }}";
+    };
+</script>
+@endpush
+

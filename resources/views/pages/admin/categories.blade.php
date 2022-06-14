@@ -24,15 +24,15 @@
                             <div class="row">
                                 <div class="col-md-12 mb-2">
                                     <label for="name"> Name <span class="text-danger">*</span> </label>
-                                    <input type="text" name="name" value="{{ @$categoryData->name }}" class="form-control" id="name" placeholder="Enter Category name">
+                                    <input type="text" name="name" value="{{ @$categoryData->name }}" class="form-control form-control-sm" id="name" placeholder="Enter Category name">
                                     @error('name') <span style="color: red">{{$message}}</span> @enderror
                                 </div>
                             </div>
                             
                             <div class="clearfix border-top">
                                 <div class="float-md-right mt-2">
-                                    <button type="reset" class="btn btn-dark">Reset</button>
-                                    <button type="submit" class="btn btn-info">{{(@$categoryData)?'Update':'Create'}}</button>
+                                    <button type="reset" class="btn btn-dark btn-sm">Reset</button>
+                                    <button type="submit" class="btn btn-info btn-sm">{{(@$categoryData)?'Update':'Create'}}</button>
                                 </div>
                             </div>
                         </form>
@@ -63,8 +63,8 @@
                                         <td>{{ $loop->index + 1 }}</td>
                                         <td>{{ $item->name }}</td>
                                         <td>
-                                            <a href="{{ route('admin.category.edit', $item->id) }}" class="btn-sm btn btn-info"><i class="fas fa-user-edit"></i></a>
-                                            <a href="{{ route('admin.category.delete', $item->id) }}" onclick="confirm('Are you sure to Delete?')" class="btn-sm btn btn-danger"><i class="fas fa-trash"></i></a>
+                                            <a href="{{ route('admin.category.edit', $item->id) }}" class="btn btn-info btn-mod-info btn-sm"><i class="fas fa-edit"></i></a>
+                                            <a href="{{ route('admin.category.delete', $item->id) }}" onclick="confirm('Are you sure to Delete?')" class="btn btn-danger btn-mod-danger btn-sm"><i class="fas fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     @endforeach
